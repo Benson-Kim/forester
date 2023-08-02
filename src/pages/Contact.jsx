@@ -1,20 +1,18 @@
 import React from "react";
 
-import { BsFillSendCheckFill } from "react-icons/bs";
-import { MdContactPhone, MdEmail } from "react-icons/md";
 import {
 	RiFacebookFill,
 	RiInstagramLine,
-	RiMailSendFill,
+	RiMailAddFill,
 	RiPhoneFill,
 	RiTwitterFill,
+	RiLinkedinBoxFill,
+	RiMailSendFill,
 } from "react-icons/ri";
-import { BiMapPin } from "react-icons/bi";
-import { FaPinterestP } from "react-icons/fa";
 
 const Contact = () => {
 	return (
-		<section className="bg-primary-black py-10 relative">
+		<section className="bg-primary-green py-10 relative">
 			<div className="max-w-screen-tablet  laptop:max-w-[960px] desktop:max-w-[1140px] w-full px-4 mx-auto block">
 				<div className="py-10 flex flex-wrap -mx-4">
 					<div className="tablet:max-w-[50%] flex-1 w-2/3 px-4 block">
@@ -65,7 +63,7 @@ const Contact = () => {
 										type="submit"
 										className="uppercase text-sm leading-7 tracking-wide flex items-center gap-2 font-semibold bg-primary-white text-primary-green rounded-md px-5 py-2.5 bg-opacity-90 hover:bg-opacity-100 hover:scale-x-105 transition-all ease-in-out duration-500 ">
 										<i>
-											<BsFillSendCheckFill />
+											<RiMailSendFill />
 										</i>
 										send message
 									</button>
@@ -98,7 +96,7 @@ const Contact = () => {
 										href="mailto:sayhello@example.com"
 										className="leading-7 tracking-wide font-light  flex items-center text-secondary-white text-lg ">
 										<i className="text-3xl mr-2">
-											<MdEmail className="" />
+											<RiMailAddFill className="" />
 										</i>
 										sayhello@example.com
 									</a>
@@ -106,33 +104,39 @@ const Contact = () => {
 										href="tel:+1800229933"
 										className="leading-7 tracking-wide font-light flex items-center text-secondary-white text-lg ">
 										<i className="text-3xl mr-2">
-											<MdContactPhone />
+											<RiPhoneFill />
 										</i>
 										+254700000000
 									</a>
 								</div>
 							</div>
 						</div>
-						<ul className="flex w-full mb-5 flex-col tablet:flex-row gap-4">
-							<li className="flex items-center justify-center p-2 transition duration-500 ease-in-out bg-secondary-white rounded-md cursor-pointer group hover:bg-primary-pink">
+						<ul className="flex w-full mb-5 justify-between items-center">
+							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
-									<RiFacebookFill className="text-xl transition duration-500 ease-in-out text-primary-green group-hover:text-white " />
+									<RiFacebookFill className=" " />
 								</i>
+								<p className="text-lg">Facebook</p>
 							</li>
-							<li className="flex items-center justify-center p-2 transition duration-500 ease-in-out bg-secondary-white rounded-md cursor-pointer group hover:bg-primary-pink">
+							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
-									<RiInstagramLine className="text-xl transition duration-500 ease-in-out text-primary-green group-hover:text-white " />
+									<RiInstagramLine className=" " />
 								</i>
+								<p className="text-lg">Instagram</p>
 							</li>
-							<li className="flex items-center justify-center p-2 transition duration-500 ease-in-out bg-secondary-white rounded-md cursor-pointer group hover:bg-primary-pink">
+
+							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
-									<RiTwitterFill className="text-xl transition duration-500 ease-in-out text-primary-green group-hover:text-white " />
+									<RiTwitterFill className=" " />
 								</i>
+								<p className="text-lg">Twitter</p>
 							</li>
-							<li className="flex items-center justify-center p-2 transition duration-500 ease-in-out bg-secondary-white rounded-md cursor-pointer group hover:bg-primary-pink">
+
+							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
-									<FaPinterestP className="text-xl transition duration-500 ease-in-out text-primary-green group-hover:text-white " />
+									<RiLinkedinBoxFill className=" " />
 								</i>
+								<p className="text-lg">LinkedIn</p>
 							</li>
 						</ul>
 					</div>
