@@ -12,6 +12,8 @@ import GiProject from "../assets/icons/icons8-project-50.png";
 import GiAwards from "../assets/icons/icons8-winners-medal-32.png";
 import Testimonials from "../components/Testimonials";
 import Carousel from "../components/Carousel";
+import Services from "../components/Services";
+import Hero from "../components/Hero";
 
 export const statsdata = [
 	{ id: 1, image: GiForeste, emphasis: "10, 000", content: "trees planted" },
@@ -24,6 +26,8 @@ const Homepage = () => {
 	return (
 		<div>
 			<Navbar />
+			<Hero />
+			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
 			{/* <Testimonials /> */}
