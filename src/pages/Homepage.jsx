@@ -14,6 +14,7 @@ import Testimonials from "../components/Testimonials";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
 import Hero from "../components/Hero";
+import Nav from "../components/Nav";
 
 export const statsdata = [
 	{ id: 1, image: GiForeste, emphasis: "10, 000", content: "trees planted" },
@@ -25,7 +26,7 @@ export const statsdata = [
 const Homepage = () => {
 	return (
 		<div>
-			<Navbar />
+			<Nav />
 			<Hero />
 			<Services />
 			<GalleryPage />

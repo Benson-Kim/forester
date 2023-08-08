@@ -1,109 +1,76 @@
-// TestimonialsSlider.js
-import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const testimonialsData = [
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+
+const images = [
 	{
 		id: 1,
-		name: "John Doe",
-		testimony:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure aut repellendus quas officia vitae expedita veniam quibusdam rerum molestiae! Reprehenderit voluptas ab sapiente reiciendis cumque incidunt officiis earum dignissimos nesciunt dolores vel at provident pariatur laboriosam asperiores deserunt rem alias autem labore veritatis velit praesentium nulla, facere doloribus. Sint odio officia aspernatur dicta vitae harum assumenda, ratione consectetur quisquam inventore dolorem in ipsum et eligendi, modi possimus perferendis velit. Fuga, earum facilis delectus ad quia dignissimos magnam illo non enim perferendis quas, eaque harum. Pariatur, dicta.",
-		date: "August 15, 2023",
-		image:
-			"https://www.istockphoto.com/photo/spruce-tree-nursery-for-reforestation-gm1363121429-434810143?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2FReforestation&utm_term=Reforestation%3A%3A%3A",
+		src: "https://media.istockphoto.com/id/1487313389/photo/creation-of-the-almighty-creator-with-its-natural-splendor.webp?b=1&s=170667a&w=0&k=20&c=yue9iTRoFmBTxYLoFT17aaKZG9skrvDCl14yn1kMa5k=",
 	},
 	{
 		id: 2,
-		name: "Jane Smith",
-		testimony:
-			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus eius, reiciendis est eum adipisci, suscipit sequi cumque inventore, cum repellendus qui? Quod, laborum! Dolores eum placeat similique, molestiae amet deserunt. Voluptatibus odio at, doloribus optio, consequuntur facilis suscipit labore, maiores ipsa aspernatur dolore nesciunt itaque? Id et debitis quibusdam accusamus in ullam, numquam porro, illum repellat assumenda minima mollitia sit nam expedita corrupti saepe iste! Labore enim rerum fuga accusantium velit repudiandae totam sequi accusamus quas eligendi dolor blanditiis voluptas nostrum officiis dolores repellendus, libero veniam beatae dolorum numquam temporibus! Ducimus?",
-		date: "September 5, 2023",
-		image:
-			"https://images.unsplash.com/photo-1571035089306-e40c9289fe78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UmVmb3Jlc3RhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+		src: "https://media.istockphoto.com/id/174851742/photo/early-morning-on-the-tea-plantation-in-india-asia.webp?b=1&s=170667a&w=0&k=20&c=Tfe6J76UUinX0ECplO-VJPLv5JrzSTtJvV0PmqElZwQ=",
 	},
-	// Add more testimonials as needed
+	{ id: 3, src: "" },
+	{ id: 4, src: "" },
+	{ id: 5, src: "" },
+	{ id: 6, src: "" },
+	{ id: 7, src: "" },
+	{
+		id: 8,
+		src: "https://images.unsplash.com/photo-1578302758063-0ef3e048ca89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+	},
+	{
+		id: 9,
+		src: "https://plus.unsplash.com/premium_photo-1678655852256-5fc5670b83eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGdhcmRlbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+	},
+	{
+		id: 10,
+		src: "https://media.istockphoto.com/id/1151367041/photo/impressive-view-of-green-garden-location-place-sicily-island-italy-europe.webp?b=1&s=170667a&w=0&k=20&c=eLO4mZuMhmq71lyPyFxhxRnD3dlZxXj6zQYW_yG1ZhE=",
+	},
 ];
 
 const Carousel = () => {
-	const [currentSlide, setCurrentSlide] = useState(0);
-	const [isHovering, setIsHovering] = useState(false);
-
-	const prevSlide = () => {
-		setCurrentSlide((prevSlide) =>
-			prevSlide === 0 ? testimonialsData.length - 1 : prevSlide - 1,
-		);
-	};
-
-	const nextSlide = () => {
-		setCurrentSlide((prevSlide) =>
-			prevSlide === testimonialsData.length - 1 ? 0 : prevSlide + 1,
-		);
-	};
-
-	// Function to move to the next slide automatically
-	const autoPlay = () => {
-		nextSlide();
-	};
-
-	useEffect(() => {
-		// Auto move to the next slide every 5 seconds (adjust the interval as needed)
-		const interval = setInterval(autoPlay, 5000);
-
-		// Clear the interval when the component unmounts to avoid memory leaks
-		return () => clearInterval(interval);
-	}, [currentSlide]);
-
 	return (
-		<section className="py-10 bg-primary-green bg-opacity-70 overflow-hidden relative">
-			<div
-				className="relative  border rounded-lg overflow-hidden shadow-md"
-				onMouseEnter={() => setIsHovering(true)}
-				onMouseLeave={() => setIsHovering(false)}>
-				<div className=" transition-transform duration-300 transform">
-					{testimonialsData.map((testimonial, index) => (
-						<div
-							key={testimonial.id}
-							className={`flex transition-transform ease-out duration-500  ${
-								index === currentSlide
-									? `translateX(-${currentSlide * 100}%)`
-									: "-translate-x-full"
-							}`}>
-							<div className="h-full flex">
-								<div className="w-1/2 h-full">
-									<img
-										src={testimonial.image}
-										alt={testimonial.name}
-										className="w-full h-full object-cover"
-										width="100"
-										height="100"
-									/>
-								</div>
-								<div className="p-4 bg-gray-200 h-full flex flex-col justify-center w-1/2">
-									<p className="text-gray-700">{testimonial.testimony}</p>
-									<div className="flex justify-between items-center mt-2">
-										<p className="text-gray-500">- {testimonial.name}</p>
-										<p className="text-gray-500">{testimonial.date}</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
-				{isHovering && (
-					<>
-						<button
-							onClick={prevSlide}
-							className="bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 ml-4 absolute top-1/2 left-0 transform -translate-y-1/2">
-							<FaChevronLeft />
-						</button>
-						<button
-							onClick={nextSlide}
-							className="bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 ml-4 absolute top-1/2 right-0 transform -translate-y-1/2">
-							<FaChevronRight />
-						</button>
-					</>
-				)}
-			</div>
+		<section className="py-10 mt-10 bg-secondary-white relative">
+			<h3 className="flex items-center justify-center capitalize text-4xl font-semibold text-primary-black mb-12">
+				Testimonials
+			</h3>
+			<Swiper
+				spaceBetween={30}
+				centeredSlides={true}
+				autoplay={{
+					delay: 5000,
+					disableOnInteraction: false,
+				}}
+				pagination={{
+					clickable: true,
+				}}
+				navigation={true}
+				modules={[Autoplay, Pagination, Navigation, EffectFade]}
+				className="py-4 px-3 text-blue-800 relative">
+				{/* {images.map((image, index) => {
+					<SwiperSlide key={index}>
+						<img src={image.} alt="" srcset="" />
+					</SwiperSlide>;
+				})} */}
+				<SwiperSlide>Slide 2</SwiperSlide>
+				<SwiperSlide>Slide 3</SwiperSlide>
+				<SwiperSlide>Slide 4</SwiperSlide>
+				<SwiperSlide>Slide 5</SwiperSlide>
+				<SwiperSlide>Slide 6</SwiperSlide>
+				<SwiperSlide>Slide 7</SwiperSlide>
+				<SwiperSlide>Slide 8</SwiperSlide>
+				<SwiperSlide>Slide 9</SwiperSlide>
+			</Swiper>
 		</section>
 	);
 };
