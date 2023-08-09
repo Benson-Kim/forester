@@ -1,15 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-
-import GalleryPage from "../components/GalleryPage";
-import Contact from "./Contact";
+import slides from "../mockslides.json";
 
 import GiForeste from "../assets/icons/icons8-forest-48.png";
 import GiCustomers from "../assets/icons/icons8-customer-64.png";
 import GiProject from "../assets/icons/icons8-project-50.png";
 import GiAwards from "../assets/icons/icons8-winners-medal-32.png";
+
+import Navbar from "../components/Navbar";
+import GalleryPage from "../components/GalleryPage";
+import Contact from "./Contact";
 import Testimonials from "../components/Testimonials";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
@@ -27,12 +28,12 @@ const Homepage = () => {
 	return (
 		<div>
 			<Nav />
+			{/* <Carousel slides={slides} /> */}
+			<Testimonials />
 			<Hero />
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
-			{/* <Testimonials /> */}
-			<Carousel />
 			<Contact />
 			{/* <Routes>
 				<Route path="contact" element={<Contact />} />

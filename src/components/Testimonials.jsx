@@ -1,101 +1,93 @@
-// import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
-// import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+	BsFillArrowLeftCircleFill,
+	BsFillArrowRightCircleFill,
+} from "react-icons/bs";
 
-// const Testimonials = () => {
-// 	const [currentSlide, setCurrentSlide] = useState(0);
-
-// 	const prevSlide = () => {
-// 		setCurrentSlide((prevSlide) =>
-// 			prevSlide === 0 ? testimonialsData.length - 1 : prevSlide - 1,
-// 		);
-// 	};
-
-// 	const nextSlide = () => {
-// 		setCurrentSlide((prevSlide) =>
-// 			prevSlide === testimonialsData.length - 1 ? 0 : prevSlide + 1,
-// 		);
-// 	};
-
-// 	// Function to move to the next slide automatically
-// 	const autoPlay = () => {
-// 		nextSlide();
-// 	};
-
-// 	useEffect(() => {
-// 		const interval = setInterval(autoPlay, 5000);
-
-// 		return () => clearInterval(interval);
-// 	}, [currentSlide]);
-
-// 	const testimonialsData = [
-// 		{
-// 			id: 1,
-// 			name: "John Doe",
-// 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-// 			image: "https://example.com/john.jpg",
-// 		},
-// 		{
-// 			id: 2,
-// 			name: "Jane Smith",
-// 			text: "Praesent in odio vel lorem facilisis eleifend quis sit amet tortor.",
-// 			image: "https://example.com/jane.jpg",
-// 		},
-// 		// Add more testimonials as needed
-// 	];
-
-// 	return (
-// 		// <section className=" w-full h-full flex items-center justify-center">
-// 		<section className=" py-10 relative">
-// 			<div className="w-1/2 h-96 border rounded overflow-hidden">
-// 				{/* <div className="absolute w-full h-full transition-transform duration-300 transform"> */}
-// 				<div>
-// 					{testimonialsData.map((testimonial, index) => (
-// 						<div
-// 							key={testimonial.id}
-// 							className={`absolute top-0 left-0 w-full h-full ${
-// 								index === currentSlide ? "" : "-translate-x-full"
-// 							}`}>
-// 							<div className="h-full flex px-16 w-full gap-x-10">
-// 								<img
-// 									src={testimonial.image}
-// 									alt={testimonial.name}
-// 									className="w-1/3 h-full object-cover"
-// 								/>
-// 								<div className="p-4 bg-gray-200 h-full flex flex-col justify-center w-2/3">
-// 									<p className="text-gray-700">{testimonial.text}</p>
-// 									<p className="mt-2 text-gray-500">- {testimonial.name}</p>
-// 								</div>
-// 							</div>
-// 						</div>
-// 					))}
-// 				</div>
-// 			</div>
-// 			<button
-// 				onClick={prevSlide}
-// 				className="bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 ml-4">
-// 				<FaChevronLeft />
-// 			</button>
-// 			<button
-// 				onClick={nextSlide}
-// 				className="bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-full p-2 ml-4">
-// 				<FaChevronRight />
-// 			</button>
-// 		</section>
-// 	);
-// };
-
-// export default Testimonials;
-
-import React from "react";
+const images = [
+	{
+		id: 1,
+		src: "https://images.unsplash.com/photo-1518676527964-e006f33f3667?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhJTIwdHJlZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", // Unsplash image link
+		alt: "Forest Image 1",
+		description:
+			"A serene forest with tall trees and sunlight filtering through leaves.",
+	},
+	{
+		id: 2,
+		src: "https://media.istockphoto.com/id/487646894/photo/coffee-tree-nursery.webp?b=1&s=170667a&w=0&k=20&c=b7-bNJEcsOjPEhmQXi4LLCvEaPMr1c5vMCzLvV6lXuA=", // Unsplash image link
+		alt: "Forest Image 2",
+		description:
+			"Misty morning in the woods, creating an enchanting atmosphere.",
+	},
+	// Add more images as needed
+];
 
 const Testimonials = () => {
+	const [currentImage, setCurrentImage] = useState(0);
+
+	const prevImage = () => {
+		setCurrentImage((prevImage) =>
+			prevImage === 0 ? images.length - 1 : prevImage - 1,
+		);
+	};
+
+	const nextImage = () => {
+		setCurrentImage((prevImage) =>
+			prevImage === images.length - 1 ? 0 : prevImage + 1,
+		);
+	};
+
+	useEffect(() => {
+		const interval = setInterval(nextImage, 5000); // Autoplay interval: 5 seconds
+
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
-		<section className="py-10 mt-10 bg-secondary-white relative">
-			<h3 className="flex items-center justify-center capitalize text-4xl font-semibold text-primary-black mb-12">
-				Testimonials
-			</h3>
-		</section>
+		<div className="relative h-[348px] overflow-hidden">
+			{images.map((image, index) => (
+				<div
+					key={image.id}
+					className={`absolute w-full h-full transition-opacity duration-300 ${
+						index === currentImage
+							? "opacity-100"
+							: "opacity-0 pointer-events-none"
+					}`}>
+					<img
+						src={image.src}
+						alt={image.alt}
+						className="w-full h-full object-cover"
+					/>
+					<div className="absolute inset-0 flex items-center justify-center text-white text-center p-4">
+						{image.description}
+					</div>
+				</div>
+			))}
+			<button
+				onClick={prevImage}
+				className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-l">
+				<i>
+					<BsFillArrowLeftCircleFill />
+				</i>
+			</button>
+			<button
+				onClick={nextImage}
+				className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-r">
+				<i>
+					<BsFillArrowRightCircleFill />
+				</i>
+			</button>
+			<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+				{images.map((_, index) => (
+					<div
+						key={index}
+						className={`h-2 w-2 rounded-full ${
+							index === currentImage ? "bg-white" : "bg-gray-300"
+						}`}></div>
+				))}
+			</div>
+		</div>
 	);
 };
 
