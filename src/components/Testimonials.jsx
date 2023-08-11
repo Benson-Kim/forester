@@ -45,7 +45,7 @@ const Testimonials = () => {
 	}, []);
 
 	return (
-		<div className="relative h-[348px] overflow-hidden">
+		<section className="relative h-[348px] overflow-hidden">
 			{images.map((image, index) => (
 				<div
 					key={image.id}
@@ -87,7 +87,7 @@ const Testimonials = () => {
 						}`}></div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 

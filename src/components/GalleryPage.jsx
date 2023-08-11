@@ -34,11 +34,12 @@ const ImageGrid = () => {
 	};
 
 	return (
-		<section className="py-10 mt-10 bg-secondary-white relative">
-			<h3 className="flex items-center justify-center capitalize text-4xl font-semibold text-primary-black mb-12">
+		<section className="pb-20 mt-20 mx-auto pt-12 bg-customLight relative">
+			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
 				Gallery
 			</h3>
-			<div className="mb-5 flex items-center justify-center ">
+			<hr className="w-12 h-0.5 mx-auto mt-5 bg-primary-green" />
+			<div className="mt-12 mb-6 flex items-center justify-center ">
 				<button
 					className={`mr-4 px-3 py-1.5 ${
 						filter === "all"
@@ -62,7 +63,7 @@ const ImageGrid = () => {
 				))}
 			</div>
 
-			<div class="flex items-center gap-4 flex-wrap">
+			<div class="flex flex-col items-center gap-4 laptop:mx-8 flex-wrap laptop:flex-row ">
 				{images
 					.filter((image) => filter === "all" || image.category === filter)
 					.map((image) => (
