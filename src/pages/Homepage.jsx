@@ -47,11 +47,11 @@ const Homepage = () => {
 			<Nav />
 			<Home />
 			{/* <Carousel slides={slides} /> */}
-			{/* <Testimonials /> */}
 			{/* <Hero /> */}
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
+			<Testimonials />
 			<Contact />
 			<Routes>
 				<Route path="services" element={<Services />} />

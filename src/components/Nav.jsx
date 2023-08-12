@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 // import icon;
@@ -14,12 +14,6 @@ const Nav = () => {
 		window.addEventListener("scroll", scrollHandler);
 		return () => window.removeEventListener("scroll", scrollHandler);
 	}, [top]);
-
-	const handleClick = (e, id) => {
-		e.preventDefault();
-		setIsOpen(false);
-		document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-	};
 
 	return (
 		<nav
@@ -55,8 +49,6 @@ const Nav = () => {
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="services"
-							id="services"
-							onClick={(e) => handleClick(e, "services")}
 							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
 							Services
 						</Link>
@@ -64,8 +56,6 @@ const Nav = () => {
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="gallery"
-							id="gallery"
-							onClick={(e) => handleClick(e, "gallery")}
 							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
 							Gallery
 						</Link>
@@ -73,8 +63,6 @@ const Nav = () => {
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="awards"
-							id="awards"
-							onClick={(e) => handleClick(e, "awards")}
 							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
 							Awards
 						</Link>
@@ -82,8 +70,6 @@ const Nav = () => {
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="reviews"
-							id="reviews"
-							onClick={(e) => handleClick(e, "reviews")}
 							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
 							Testimonials
 						</Link>

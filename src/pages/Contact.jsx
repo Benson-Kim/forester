@@ -116,27 +116,27 @@ const Contact = () => {
 								<i>
 									<RiFacebookFill className=" " />
 								</i>
-								<p className="text-lg">Facebook</p>
+								<p className="hidden md:block text-lg">Facebook</p>
 							</li>
 							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
 									<RiInstagramLine className=" " />
 								</i>
-								<p className="text-lg">Instagram</p>
+								<p className="hidden md:block text-lg">Instagram</p>
 							</li>
 
-							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
+							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md md:rounded-full cursor-pointer hover:translate-x-1">
 								<i>
 									<RiTwitterFill className=" " />
 								</i>
-								<p className="text-lg">Twitter</p>
+								<p className="hidden md:block text-lg">Twitter</p>
 							</li>
 
 							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
 									<RiLinkedinBoxFill className=" " />
 								</i>
-								<p className="text-lg">LinkedIn</p>
+								<p className="hidden md:block text-lg">LinkedIn</p>
 							</li>
 						</ul>
 					</div>
