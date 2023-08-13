@@ -3,7 +3,7 @@ import Homepage from "./pages/Homepage";
 
 const App = () => {
 	return (
-		<div className="bg-customLight">
+		<div className="bg-customLight font-poppins">
 			<Homepage />
 		</div>
 	);

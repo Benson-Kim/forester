@@ -1,18 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
+* {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-* {
-	box-sizing: border-box;
+body {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
 }
+
 .gradient-bg {
-	background-image: linear-gradient(90deg, #512da8, #711e72);
+	background-image: linear-gradient(90deg, #1e824c, #0d4d2a);
 }
 
 .swiper {
@@ -53,4 +62,40 @@ h6 {
 	margin-bottom: 0.5rem;
 	font-weight: 500;
 	line-height: 1.2;
+	font-family: Poppins, sans-serif;
+}
+
+p {
+	font-size: 14.4px;
+	line-height: 24px;
+	font-family: Rubik, sans-serif;
+}
+
+.feature-card:hover {
+	background: var(--black-gradient);
+	box-shadow: var(--card-shadow);
+}
+
+.feedback-card {
+	background: transparent;
+}
+
+.feedback-card:hover {
+	background: var(--black-gradient);
+}
+
+.bg-blue-gradient {
+	background: linear-gradient(
+		157.81deg,
+		#def9fa -43.27%,
+		#bef3f5 -21.24%,
+		#9dedf0 12.19%,
+		#7de7eb 29.82%,
+		#5ce1e6 51.94%,
+		#33bbcf 90.29%
+	);
+}
+
+.slider-container {
+	@apply w-full;
 }

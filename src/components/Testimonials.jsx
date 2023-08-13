@@ -5,90 +5,97 @@ import {
 	BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 
-const images = [
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+const feedback = [
 	{
-		id: 1,
-		src: "https://images.unsplash.com/photo-1518676527964-e006f33f3667?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhJTIwdHJlZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60", // Unsplash image link
-		alt: "Forest Image 1",
-		description:
-			"A serene forest with tall trees and sunlight filtering through leaves.",
+		id: "feedback-1",
+		content:
+			"Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
+		name: "Herman Jensen",
+		title: "Founder & Leader",
+		img: "https://i.imgur.com/Dn0qoCG.png",
 	},
 	{
-		id: 2,
-		src: "https://media.istockphoto.com/id/487646894/photo/coffee-tree-nursery.webp?b=1&s=170667a&w=0&k=20&c=b7-bNJEcsOjPEhmQXi4LLCvEaPMr1c5vMCzLvV6lXuA=", // Unsplash image link
-		alt: "Forest Image 2",
-		description:
-			"Misty morning in the woods, creating an enchanting atmosphere.",
+		id: "feedback-2",
+		content:
+			"Money makes your life easier. If you're lucky to have it, you're lucky.",
+		name: "Steve Mark",
+		title: "Founder & Leader",
+		img: "https://i.imgur.com/fk8eEvW.png",
 	},
-	// Add more images as needed
+	{
+		id: "feedback-3",
+		content:
+			"It is usually people in the money business, finance, and international trade that are really rich.",
+		name: "Kenn Gallagher",
+		title: "Founder & Leader",
+		img: "https://i.imgur.com/dLxxRDy.png",
+	},
 ];
 
 const Testimonials = () => {
-	const [currentImage, setCurrentImage] = useState(0);
-
-	const prevImage = () => {
-		setCurrentImage((prevImage) =>
-			prevImage === 0 ? images.length - 1 : prevImage - 1,
-		);
-	};
-
-	const nextImage = () => {
-		setCurrentImage((prevImage) =>
-			prevImage === images.length - 1 ? 0 : prevImage + 1,
-		);
-	};
-
-	useEffect(() => {
-		const interval = setInterval(nextImage, 5000); // Autoplay interval: 5 seconds
-
-		return () => clearInterval(interval);
-	}, []);
-
 	return (
-		<section className="relative h-[348px] overflow-hidden">
-			{images.map((image, index) => (
-				<div
-					key={image.id}
-					className={`absolute w-full h-full transition-opacity duration-300 ${
-						index === currentImage
-							? "opacity-100"
-							: "opacity-0 pointer-events-none"
-					}`}>
-					<img
-						src={image.src}
-						alt={image.alt}
-						className="w-full h-full object-cover"
-					/>
-					<div className="absolute inset-0 flex items-center justify-center text-white text-center p-4">
-						{image.description}
-					</div>
-				</div>
-			))}
-			<button
-				onClick={prevImage}
-				className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-l">
-				<i>
-					<BsFillArrowLeftCircleFill />
-				</i>
-			</button>
-			<button
-				onClick={nextImage}
-				className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-r">
-				<i>
-					<BsFillArrowRightCircleFill />
-				</i>
-			</button>
-			<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-				{images.map((_, index) => (
-					<div
-						key={index}
-						className={`h-2 w-2 rounded-full ${
-							index === currentImage ? "bg-white" : "bg-gray-300"
-						}`}></div>
-				))}
-			</div>
+		<section className="pt-6 md:pt-12 pb-10 md:pb-20  mx-auto bg-customLight relative">
+			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
+				Testimonials
+			</h3>
+			<hr className="w-12 h-0.5 mx-auto mt-2.5 md:mt-5 bg-primary-green" />
+			<p className="text-[#95a0ab] tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
+				Every Review, a Testimonial of Connection: Join Our Community in
+				Celebrating the <br /> Positive Ripples of Our Forest Engagement
+			</p>
+			{/* <div className="flex justify-center items-center flex-col relative bg-primary-green">
+				<Swiper
+					spaceBetween={30}
+					centeredSlides={true}
+					autoplay={{
+						delay: 3000,
+						disableOnInteraction: false,
+					}}
+					pagination={{
+						clickable: true,
+					}}
+					navigation={true}
+					modules={[Autoplay, Pagination, Navigation]}
+					className="">
+					{feedback.map((card) => (
+						<SwiperSlide>
+							<FeedbackCard key={card.id} {...card} />
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div> */}
 		</section>
 	);
 };
 
 export default Testimonials;
+
+const FeedbackCard = ({ content, name, title, img }) => (
+	<div className="flex justify-between flex-col  px-10 py-12 rounded-[20px]  max-w-[370px]  mx-auto my-0 feedback-card">
+		<p className="font-poppins font-normal text-[18px] leading-[32.4px] text-white my-10">
+			{content}
+		</p>
+
+		<div className="flex flex-row">
+			<img src={img} alt={name} className=" rounded-full" />
+			<div className="flex flex-col ml-4">
+				<h4 className="font-poppins font-semibold text-[20px] leading-[32px] text-white">
+					{name}
+				</h4>
+				<p className="font-poppins font-normal text-[16px] leading-[24px] text-dimWhite">
+					{title}
+				</p>
+			</div>
+		</div>
+	</div>
+);

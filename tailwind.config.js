@@ -6,10 +6,13 @@ module.exports = {
 			backgroundImage: {
 				hero: "url('../public/assets/images/image6.jpg')",
 			},
-
+			fontFamily: {
+				poppins: ["Poppins", "sans-serif"],
+				rubik: ["Rubik", "sans-serif"],
+			},
 			colors: {
-				customLime: "#3da851",
-				customGreen: "#1e7262",
+				customLime: "#1e824c",
+				customGreen: "#0d4d2a",
 				customLight: "#f8f9fa",
 				customLightGreen: "#239423",
 				"primary-white": "#fff",
@@ -17,7 +20,7 @@ module.exports = {
 				"primary-green": "#154406",
 				"secondary-green": "#217541",
 				"primary-black": "#09000d",
-				"secondary-black": "#303030",
+				"secondary-black": "#212529;",
 				orange: "#ff980e",
 			},
 			screens: {

@@ -17,8 +17,8 @@ const Nav = () => {
 
 	return (
 		<nav
-			className={`sticky left-0 top-0  text-secondary-white right-0 z-20 py-6 mx-auto px-4 md:px-8 flex justify-between items-center ${
-				!top && `bg-primary-black`
+			className={`sticky left-0 top-0  text-customLight right-0 z-20 py-6 mx-auto px-4 md:px-8 flex justify-between items-center ${
+				!top && `bg-secondary-black`
 			}`}>
 			<div className="flex items-center flex-shrink-0 mr-6 lg:mr-72">
 				<img src="" className="w-100 h-10 mr-2" alt="Logo" />
@@ -45,45 +45,45 @@ const Nav = () => {
 				className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${
 					isOpen ? "block" : "hidden"
 				}`}>
-				<ul className="text-sm flex  lg:flex-grow font-sans">
+				<ul className=" flex  lg:flex-grow font-poppins">
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="services"
-							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
+							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
 							Services
 						</Link>
 					</li>
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="gallery"
-							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
+							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
 							Gallery
 						</Link>
 					</li>
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="awards"
-							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
+							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
 							Awards
 						</Link>
 					</li>
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="reviews"
-							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
+							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
 							Testimonials
 						</Link>
 					</li>
 					<li className="block mt-4 lg:inline-block lg:mt-0 ">
 						<Link
 							to="contact"
-							className="mx-2.5 py-3.5 font-semibold text-opacity-60 hover:text-opacity-100 transition-all ease-in duration-300">
+							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
 							Contact
 						</Link>
 					</li>
 				</ul>
 				<div>
-					<button className="inline-flex items-center bg-secondary-green border-0 py-1.5 px-5 text-secondary-white rounded-full">
+					<button className="inline-flex items-center bg-customLight border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
 						Click Me
 					</button>
 				</div>

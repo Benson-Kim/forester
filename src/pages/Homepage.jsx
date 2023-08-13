@@ -74,9 +74,8 @@ export const Awards = ({ statsdata }) => {
 			</h3>
 			<hr className="w-12 h-0.5 mx-auto mt-5 bg-primary-green" />
 			<p className="text-[#95a0ab] tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
-				We craft digital, graphic and dimensional thinking, to create category
-				leading brand experiences that <br /> have meaning and add a value for
-				our clients.
+				In the Spotlight of Excellence: Our Awards Stand as Beacon Markers on
+				the Journey <br /> Towards Sustainable Forest Preservation
 			</p>
 			<div className="mt-12 flex justify-center">
 				<ul className="flex rounded-md py-6 flex-col tablet:flex-row gap-6 items-center flex-wrap justify-center px-5 tablet:px-10 laptop:px-20">
