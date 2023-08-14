@@ -14,29 +14,70 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const feedback = [
 	{
-		id: "feedback-1",
+		id: 1,
 		content:
-			"Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-		name: "Herman Jensen",
-		title: "Founder & Leader",
-		img: "https://i.imgur.com/Dn0qoCG.png",
+			"Exploring these enchanting woods was a dream come true. The towering trees and serene atmosphere left me in awe. A must-visit for nature enthusiasts!",
+		name: "Sophia Anderson",
+		img: "https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.webp?b=1&s=170667a&w=0&k=20&c=FL5v_ghmM3iWVOKfYahkC7Tdn3QxEb7CccoE9_atiE4=",
+		title: "Farmer",
 	},
 	{
-		id: "feedback-2",
+		id: 2,
 		content:
-			"Money makes your life easier. If you're lucky to have it, you're lucky.",
-		name: "Steve Mark",
-		title: "Founder & Leader",
-		img: "https://i.imgur.com/fk8eEvW.png",
+			"The forest trails provided a rejuvenating escape from the city's hustle and bustle. The sights, sounds, and fresh air are truly invigorating.",
+		name: "Michael Carter",
+		img: "https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.webp?b=1&s=170667a&w=0&k=20&c=FL5v_ghmM3iWVOKfYahkC7Tdn3QxEb7CccoE9_atiE4=",
+		title: "Priest, Mathari",
 	},
 	{
-		id: "feedback-3",
+		id: 3,
 		content:
-			"It is usually people in the money business, finance, and international trade that are really rich.",
-		name: "Kenn Gallagher",
+			"I found my peace amidst these ancient trees. The tranquility of the forest is a treasure that everyone should experience.",
+		name: "Ella Martinez",
+		img: "https://media.istockphoto.com/id/1248915720/photo/farmers-hand-watering-a-young-plant.webp?b=1&s=170667a&w=0&k=20&c=FL5v_ghmM3iWVOKfYahkC7Tdn3QxEb7CccoE9_atiE4=",
 		title: "Founder & Leader",
-		img: "https://i.imgur.com/dLxxRDy.png",
 	},
+	{
+		id: 4,
+		content:
+			"Exploring these enchanting woods was a dream come true. The towering trees and serene atmosphere left me in awe. A must-visit for nature enthusiasts!",
+		name: "Sophia Anderson",
+		img: "https://media.istockphoto.com/id/1400274566/photo/angus-cows-grazing.webp?b=1&s=170667a&w=0&k=20&c=z3Oh-5GCtIsXLda2WOiri1fHfZGsPJMg_4bT0whsloM=",
+		title: "Farmer",
+	},
+	{
+		id: 5,
+		content:
+			"The forest trails provided a rejuvenating escape from the city's hustle and bustle. The sights, sounds, and fresh air are truly invigorating.",
+		name: "Michael Carter",
+		img: "https://media.istockphoto.com/id/1441071756/photo/photo-of-an-asian-senior-male-farmer-wearing-straw-hat-with-his-freshly-harvested-bananas-in.webp?b=1&s=170667a&w=0&k=20&c=tBaqQInt9wz1rxP4w-k5APvVTaRKjElDaxUVqD-5M4c=",
+		title: "Organic Farmer",
+	},
+	{
+		id: 6,
+		content:
+			"I found my peace amidst these ancient trees. The tranquility of the forest is a treasure that everyone should experience.",
+		name: "Ella Martinez",
+		img: "https://media.istockphoto.com/photos/portrait-of-young-female-gardener-working-in-flower-nursery-picture-id1219687787",
+		title: "Gardener",
+	},
+	{
+		id: 7,
+		content:
+			"Nature's beauty shines through every corner of this forest. As a photographer, I captured the essence of the woods in every shot.",
+		name: "Alex Turner",
+		img: "https://images.unsplash.com/photo-1595168638475-03b6b392d90f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBob3RvZ3JhcGhlciUyMHRyZWUlMjBwbGFudGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+		title: "Photographer",
+	},
+	{
+		id: 8,
+		content:
+			"A walk through these woods is like stepping into a fairytale. The vibrant colors and diverse wildlife make it a magical experience.",
+		name: "Olivia Lee",
+		img: "https://media.istockphoto.com/id/1314925308/photo/two-men-planted-a-tree.webp?b=1&s=170667a&w=0&k=20&c=BAxzygPlMuD9dLDmsOKysRKFUitVc2Kkd3SSOlWFatM=",
+		title: "Adventurer",
+	},
+	// Add more forest reviews here
 ];
 
 const Testimonials = () => {
@@ -51,27 +92,27 @@ const Testimonials = () => {
 				Celebrating the <br /> Positive Ripples of Our Forest Engagement
 			</p>
 			<div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
-				<div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+				<div className="max-w-xl text-center">
 					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-						Don't just take our word for it...
+						Don't just take our word for it...{""}
 						<br className="hidden sm:block lg:hidden" />
 						Read reviews from our customers
 					</h2>
 
-					<p className="mt-4 text-gray-500">
+					<p className="mt-4 text-secondary-black">
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
 						veritatis illo placeat harum porro optio fugit a culpa sunt id!
 					</p>
 
 					<div className="hidden lg:mt-8 lg:flex lg:gap-4">
-						<button className="prev-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white">
+						<button className="prev-button rounded-full border border-secondary-green p-3 text-primary-green hover:bg-primary-green hover:text-white">
 							<span className="sr-only">Previous Slide</span>
 							<i>
 								<BsChevronLeft />
 							</i>
 						</button>
 
-						<button className="next-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white">
+						<button className="next-button rounded-full border border-secondary-green p-3 text-primary-green hover:bg-primary-green hover:text-white">
 							<span className="sr-only">Next Slide</span>
 							<i>
 								<BsChevronRight />
@@ -84,7 +125,7 @@ const Testimonials = () => {
 						<div className="swiper-wrapper">
 							<Swiper
 								spaceBetween={32}
-								slidesPerView={1}
+								slidesPerView={2}
 								centeredSlides={true}
 								loop={true}
 								autoplay={{
@@ -128,24 +169,19 @@ export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
 	<div className="swiper-slide">
-		<blockquote className="flex h-full flex-col justify-between bg-white p-12">
-			<div className="text-center">
-				<img
-					src={img}
-					alt={name}
-					className="h-16 w-16 rounded-full object-cover"
-				/>
+		<blockquote className="flex flex-col justify-between bg-white">
+			<img src={img} alt={name} className="h-16 w-16 object-cover" />
 
-				<div className="mt-4">
-					<p className="text-2xl font-bold text-pink-600 sm:text-3xl">
-						{title}
-					</p>
+			<div className="mt-4 p-12">
+				<p className="text-2xl font-bold text-primary-green sm:text-3xl">
+					{title}
+				</p>
 
-					<p className="mt-4 leading-relaxed text-gray-500">{content}</p>
-				</div>
+				<p className="mt-4 leading-relaxed text-secondary-black">{content}</p>
+				<footer className="mt-8 text-sm text-secondary-black">
+					&mdash; {name}
+				</footer>
 			</div>
-
-			<footer className="mt-8 text-sm text-gray-500">&mdash; {name}</footer>
 		</blockquote>
 	</div>
 );

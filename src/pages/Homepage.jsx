@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import GalleryPage from "../components/GalleryPage";
 import Contact from "./Contact";
 import Testimonials from "../components/Testimonials";
-import Carousel from "../components/Carousel";
 import Services from "../components/Services";
 import Nav from "../components/Nav";
 import Home from "../components/Home";
@@ -42,8 +41,6 @@ const Homepage = () => {
 		<div>
 			<Nav />
 			<Home />
-			<Carousel />
-			{/* <Hero /> */}
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
