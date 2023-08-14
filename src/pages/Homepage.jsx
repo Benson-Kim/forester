@@ -1,15 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import slides from "../mockslides.json";
-
-import Navbar from "../components/Navbar";
 import GalleryPage from "../components/GalleryPage";
 import Contact from "./Contact";
 import Testimonials from "../components/Testimonials";
 import Carousel from "../components/Carousel";
 import Services from "../components/Services";
-import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Home from "../components/Home";
 import {
@@ -46,7 +42,7 @@ const Homepage = () => {
 		<div>
 			<Nav />
 			<Home />
-			{/* <Carousel slides={slides} /> */}
+			<Carousel />
 			{/* <Hero /> */}
 			<Services />
 			<GalleryPage />

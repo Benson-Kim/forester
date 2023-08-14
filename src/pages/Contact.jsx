@@ -9,6 +9,7 @@ import {
 	RiLinkedinBoxFill,
 	RiMailSendFill,
 } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
 	return (
@@ -16,7 +17,7 @@ const Contact = () => {
 			<div className="max-w-screen-tablet  laptop:max-w-[960px] desktop:max-w-[1140px] w-full px-4 mx-auto block">
 				<div className="py-10 flex flex-wrap -mx-4">
 					<div className="tablet:max-w-[50%] flex-1 w-2/3 px-4 block">
-						<h4 className="text-primary-white text-2xl leading-6 font-serif font-medium mb-4 mt-0 block">
+						<h4 className="text-primary-white text-2xl leading-6 font-medium mb-4 mt-0 block">
 							Leave your message
 						</h4>
 						{/* form starts here */}
@@ -24,7 +25,7 @@ const Contact = () => {
 						<div className="">
 							<form
 								action=""
-								className="m-0 p-0 block font-sans font-light leading-6 text-xl">
+								className="m-0 p-0 block font-light leading-6 text-xl">
 								<fieldset className="min-w-0 p-0 m-0 border-none block">
 									<div className="flex w-full mb-5 flex-col tablet:flex-row gap-4 transition-all ease-in-out duration-500">
 										<input
@@ -73,14 +74,14 @@ const Contact = () => {
 						{/* form ends */}
 						<p className="text-primary-white mt-5 font-light text-sm tablet:text-base laptop:text-xl leading-6 laptop:leading-8 ">
 							* We don't share your personal info. <br /> Check out our{" "}
-							<a href="#" className="text-orange">
+							<Link to="" className="text-orange">
 								Privacy Policy
-							</a>{" "}
+							</Link>{" "}
 							for more information.{" "}
 						</p>
 					</div>
 					<div className="tablet:max-w-[50%] flex-1 w-full px-4 block mt-8 tablet:mt-0">
-						<h4 className="text-primary-white text-2xl leading-6 font-serif font-medium mb-4 mt-0 block">
+						<h4 className="text-primary-white text-2xl leading-6 font-medium mb-4 mt-0 block">
 							Contact Info
 						</h4>
 						<div className="">

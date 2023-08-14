@@ -21,7 +21,7 @@ const Home = () => {
 							<p className="my-6 mx-auto">
 								<Link
 									to=""
-									className="inline-flex items-center bg-secondary-white py-2.5 px-5 text-sm text-center leading-6 border border-customGreen tracking-[0.5px] text-secondary-black rounded-[0.25rem] hover:-translate-y-1 transition ease-in duration-300">
+									className="inline-flex items-center bg-secondary-white py-2 px-5 text-sm text-center leading-6 border border-customGreen tracking-[0.5px] text-secondary-black rounded-sm hover:-translate-y-1 transition ease-in duration-300">
 									Read more
 								</Link>
 							</p>

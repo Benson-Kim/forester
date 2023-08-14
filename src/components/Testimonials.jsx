@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import {
-	BsFillArrowLeftCircleFill,
-	BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -53,27 +50,76 @@ const Testimonials = () => {
 				Every Review, a Testimonial of Connection: Join Our Community in
 				Celebrating the <br /> Positive Ripples of Our Forest Engagement
 			</p>
-			{/* <div className="flex justify-center items-center flex-col relative bg-primary-green">
-				<Swiper
-					spaceBetween={30}
-					centeredSlides={true}
-					autoplay={{
-						delay: 3000,
-						disableOnInteraction: false,
-					}}
-					pagination={{
-						clickable: true,
-					}}
-					navigation={true}
-					modules={[Autoplay, Pagination, Navigation]}
-					className="">
-					{feedback.map((card) => (
-						<SwiperSlide>
-							<FeedbackCard key={card.id} {...card} />
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</div> */}
+			<div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
+				<div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+						Don't just take our word for it...
+						<br className="hidden sm:block lg:hidden" />
+						Read reviews from our customers
+					</h2>
+
+					<p className="mt-4 text-gray-500">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
+						veritatis illo placeat harum porro optio fugit a culpa sunt id!
+					</p>
+
+					<div className="hidden lg:mt-8 lg:flex lg:gap-4">
+						<button className="prev-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white">
+							<span className="sr-only">Previous Slide</span>
+							<i>
+								<BsChevronLeft />
+							</i>
+						</button>
+
+						<button className="next-button rounded-full border border-pink-600 p-3 text-pink-600 hover:bg-pink-600 hover:text-white">
+							<span className="sr-only">Next Slide</span>
+							<i>
+								<BsChevronRight />
+							</i>
+						</button>
+					</div>
+				</div>
+				<div className="-mx-6 lg:col-span-2 lg:mx-0">
+					<div className="swiper-container !overflow-hidden">
+						<div className="swiper-wrapper">
+							<Swiper
+								spaceBetween={32}
+								slidesPerView={1}
+								centeredSlides={true}
+								loop={true}
+								autoplay={{
+									delay: 3000,
+									disableOnInteraction: false,
+								}}
+								pagination={{
+									clickable: true,
+								}}
+								navigation={{
+									nextEl: ".next-button",
+									prevEl: ".prev-button",
+								}}
+								breakpoints={{
+									640: {
+										centeredSlides: true,
+										slidesPerView: 1.25,
+									},
+									1024: {
+										centeredSlides: false,
+										slidesPerView: 1.5,
+									},
+								}}
+								modules={[Autoplay, Pagination, Navigation]}
+								className="">
+								{feedback.map((card) => (
+									<SwiperSlide>
+										<FeedbackCard key={card.id} {...card} />
+									</SwiperSlide>
+								))}
+							</Swiper>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 	);
 };
@@ -81,21 +127,25 @@ const Testimonials = () => {
 export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
-	<div className="flex justify-between flex-col  px-10 py-12 rounded-[20px]  max-w-[370px]  mx-auto my-0 feedback-card">
-		<p className="font-poppins font-normal text-[18px] leading-[32.4px] text-white my-10">
-			{content}
-		</p>
+	<div className="swiper-slide">
+		<blockquote className="flex h-full flex-col justify-between bg-white p-12">
+			<div className="text-center">
+				<img
+					src={img}
+					alt={name}
+					className="h-16 w-16 rounded-full object-cover"
+				/>
 
-		<div className="flex flex-row">
-			<img src={img} alt={name} className=" rounded-full" />
-			<div className="flex flex-col ml-4">
-				<h4 className="font-poppins font-semibold text-[20px] leading-[32px] text-white">
-					{name}
-				</h4>
-				<p className="font-poppins font-normal text-[16px] leading-[24px] text-dimWhite">
-					{title}
-				</p>
+				<div className="mt-4">
+					<p className="text-2xl font-bold text-pink-600 sm:text-3xl">
+						{title}
+					</p>
+
+					<p className="mt-4 leading-relaxed text-gray-500">{content}</p>
+				</div>
 			</div>
-		</div>
+
+			<footer className="mt-8 text-sm text-gray-500">&mdash; {name}</footer>
+		</blockquote>
 	</div>
 );
