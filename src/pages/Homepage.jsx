@@ -46,13 +46,6 @@ const Homepage = () => {
 			<Awards statsdata={statsdata} />
 			<Testimonials />
 			<Contact />
-			<Routes>
-				<Route path="services" element={<Services />} />
-				<Route path="gallery" element={<GalleryPage />} />
-				<Route path="awards" element={<Awards statsdata={statsdata} />} />
-				<Route path="reviews" element={<Testimonials />} />
-				<Route path="contact" element={<Contact />} />
-			</Routes>
 		</div>
 	);
 };
@@ -61,7 +54,7 @@ export default Homepage;
 
 export const Awards = ({ statsdata }) => {
 	return (
-		<section className="py-14 bg-white mx-auto ">
+		<section id="awards" className="py-14 bg-white mx-auto ">
 			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
 				Awards
 			</h3>

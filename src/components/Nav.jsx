@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
 
 // import icon;
@@ -21,7 +22,13 @@ const Nav = () => {
 				!top && `bg-secondary-black`
 			}`}>
 			<div className="flex items-center flex-shrink-0 mr-6 lg:mr-72">
-				<img src="" className="w-100 h-10 mr-2" alt="Logo" />
+				<ScrollLink
+					to="home"
+					smooth={true}
+					duration={500}
+					className="cursor-pointer transition-all ease-in duration-300">
+					<img src="" className="w-100 h-10 mr-2" alt="Logo" />
+				</ScrollLink>
 			</div>
 			<div className="block lg:hidden">
 				<button
@@ -46,40 +53,52 @@ const Nav = () => {
 					isOpen ? "block" : "hidden"
 				}`}>
 				<ul className=" flex  lg:flex-grow font-poppins">
-					<li className="block mt-4 lg:inline-block lg:mt-0 ">
-						<Link
+					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+						<ScrollLink
 							to="services"
-							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
+							smooth={true}
+							duration={500}
+							className="cursor-pointer mx-3.5 py-3.5 font-light ">
 							Services
-						</Link>
+						</ScrollLink>
 					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 ">
-						<Link
+					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+						<ScrollLink
 							to="gallery"
-							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
+							smooth={true}
+							duration={500}
+							className="cursor-pointer mx-3.5 py-3.5 font-light  ">
 							Gallery
-						</Link>
+						</ScrollLink>
 					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 ">
-						<Link
+					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+						<ScrollLink
 							to="awards"
-							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
+							smooth={true}
+							duration={500}
+							className="cursor-pointer mx-3.5 py-3.5 font-light">
 							Awards
-						</Link>
+						</ScrollLink>
 					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 ">
-						<Link
+					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+						<ScrollLink
 							to="reviews"
-							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
+							smooth={true}
+							duration={500}
+							className="cursor-pointer mx-3.5 py-3.5 font-light ">
 							Testimonials
-						</Link>
+						</ScrollLink>
 					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 ">
-						<Link
+					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+						<ScrollLink
 							to="contact"
-							className="mx-3.5 py-3.5 font-light  transition-all ease-in duration-300">
+							smooth={true}
+							spy={true}
+							duration={500}
+							offset={-95}
+							className="cursor-pointer mx-3.5 py-3.5 font-light">
 							Contact
-						</Link>
+						</ScrollLink>
 					</li>
 				</ul>
 				<div>

@@ -82,7 +82,9 @@ const feedback = [
 
 const Testimonials = () => {
 	return (
-		<section className="pt-6 md:pt-12 pb-10 md:pb-20  mx-auto bg-customLight relative">
+		<section
+			id="reviews"
+			className="pt-6 md:pt-12 pb-10 md:pb-20  mx-auto bg-customLight relative">
 			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
 				Testimonials
 			</h3>

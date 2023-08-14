@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 	return (
-		<section className="bg-hero bg-no-repeat bg-cover bg-center py-20 h-full ">
+		<section
+			id="home"
+			className="bg-hero bg-no-repeat bg-cover bg-center py-20 h-full ">
 			<div className="gradient-bg bg-gradient-to-r from-customLime to-customGreen opacity-90 absolute h-full w-full right-0 bottom-0 left-0 top-0" />
 			<div className="w-full h-full table">
 				<div className="align-middle table-cell">

@@ -34,7 +34,9 @@ const ImageGrid = () => {
 	};
 
 	return (
-		<section className="pb-20 mt-20 mx-auto pt-12 bg-primary-white relative">
+		<section
+			id="gallery"
+			className="pb-20 mt-20 mx-auto pt-12 bg-primary-white relative">
 			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
 				Gallery
 			</h3>

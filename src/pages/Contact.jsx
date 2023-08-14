@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
 	return (
-		<section className="py-10 bg-secondary-black relative">
+		<section id="contact" className="py-10 bg-secondary-black relative">
 			<div className="max-w-screen-tablet  laptop:max-w-[960px] desktop:max-w-[1140px] w-full px-4 mx-auto block">
 				<div className="py-10 flex flex-wrap -mx-4">
 					<div className="tablet:max-w-[50%] flex-1 w-2/3 px-4 block">
