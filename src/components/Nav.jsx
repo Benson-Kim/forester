@@ -1,8 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
-// import icon;
+const navlinks = [
+	{
+		id: 1,
+		title: "services",
+	},
+	{
+		id: 2,
+		title: "gallery",
+	},
+	{
+		id: 3,
+		title: "awards",
+	},
+	{
+		id: 4,
+		title: "testimonials",
+	},
+	{
+		id: 5,
+		title: "team",
+	},
+	{
+		id: 6,
+		title: "blog",
+	},
+	{
+		id: 7,
+		title: "contact",
+	},
+];
 
 const Nav = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +46,8 @@ const Nav = () => {
 
 	return (
 		<nav
-			className={`sticky left-0 top-0  text-customLight right-0 z-20 py-6 mx-auto px-4 md:px-8 flex justify-between items-center ${
-				!top && `bg-secondary-black`
+			className={`sticky left-0 top-0 text-secondary-white right-0 z-20 py-6 mx-auto px-4 md:px-8 flex justify-between items-center ${
+				!top && `bg-primary-black`
 			}`}>
 			<div className="flex items-center flex-shrink-0 mr-6 lg:mr-72">
 				<ScrollLink
@@ -52,57 +80,24 @@ const Nav = () => {
 				className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${
 					isOpen ? "block" : "hidden"
 				}`}>
-				<ul className=" flex  lg:flex-grow font-poppins">
-					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
-						<ScrollLink
-							to="services"
-							smooth={true}
-							duration={500}
-							className="cursor-pointer mx-3.5 py-3.5 font-light ">
-							Services
-						</ScrollLink>
-					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
-						<ScrollLink
-							to="gallery"
-							smooth={true}
-							duration={500}
-							className="cursor-pointer mx-3.5 py-3.5 font-light  ">
-							Gallery
-						</ScrollLink>
-					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
-						<ScrollLink
-							to="awards"
-							smooth={true}
-							duration={500}
-							className="cursor-pointer mx-3.5 py-3.5 font-light">
-							Awards
-						</ScrollLink>
-					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
-						<ScrollLink
-							to="reviews"
-							smooth={true}
-							duration={500}
-							className="cursor-pointer mx-3.5 py-3.5 font-light ">
-							Testimonials
-						</ScrollLink>
-					</li>
-					<li className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
-						<ScrollLink
-							to="contact"
-							smooth={true}
-							spy={true}
-							duration={500}
-							offset={-95}
-							className="cursor-pointer mx-3.5 py-3.5 font-light">
-							Contact
-						</ScrollLink>
-					</li>
+				<ul className=" flex lg:flex-grow font-rubik tracking-wider">
+					{navlinks.map((linkitem) => (
+						<li
+							key={linkitem.id}
+							className="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-secondary-white border-opacity-0 hover:border-opacity-100 transition-all ease-in duration-300 ">
+							<ScrollLink
+								to={linkitem.title}
+								smooth={true}
+								duration={500}
+								offset={-60}
+								className="cursor-pointer mx-3.5 py-3.5 font-light capitalize ">
+								{linkitem.title}
+							</ScrollLink>
+						</li>
+					))}
 				</ul>
 				<div>
-					<button className="inline-flex items-center bg-customLight border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
+					<button className="inline-flex items-center bg-secondary-white border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
 						Click Me
 					</button>
 				</div>

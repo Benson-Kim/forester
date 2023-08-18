@@ -21,7 +21,7 @@ body {
 }
 
 .gradient-bg {
-	background-image: linear-gradient(90deg, #1e824c, #0d4d2a);
+	background-image: linear-gradient(90deg, #212529, #1a1a1a);
 }
 
 .swiper {

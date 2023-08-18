@@ -36,11 +36,11 @@ const ImageGrid = () => {
 	return (
 		<section
 			id="gallery"
-			className="pb-20 mt-20 mx-auto pt-12 bg-primary-white relative">
-			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
+			className="pt-6 md:pt-12 pb-10 md:pb-20 mt-10 md:mt-20 mx-auto relative">
+			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-customGreen mb-0 pb-4">
 				Gallery
 			</h3>
-			<hr className="w-12 h-0.5 mx-auto mt-5 bg-primary-green" />
+			<hr className="w-12 h-0.5 mx-auto mt-5 bg-secondary-white" />
 			<p className="text-[#95a0ab] tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
 				Journey Through the Seasons, One Frame at a Time: Our Gallery Unveils
 				the <br /> Spectrum of Forest Stories, from Dawn to Dusk
@@ -49,8 +49,8 @@ const ImageGrid = () => {
 				<button
 					className={`mr-4 px-3 py-1.5 ${
 						filter === "all"
-							? "underline capitalize decoration-primary-green underline-offset-4 font-semibold text-lg text-secondary-green"
-							: " capitalize decoration-secondary-black underline-offset-4 font-semibold text-lg text-secondary-black"
+							? "underline capitalize decoration-customGreen underline-offset-4 font-semibold text-lg text-customGreen"
+							: " capitalize decoration-secondary-black underline-offset-4 font-semibold text-lg text-secondary-white"
 					}`}
 					onClick={() => handleCategoryChange("all")}>
 					All
@@ -60,8 +60,8 @@ const ImageGrid = () => {
 						key={category}
 						className={`mr-4 ${
 							filter === category
-								? "underline capitalize decoration-primary-green underline-offset-4 font-semibold text-lg text-secondary-green"
-								: " capitalize decoration-primary-green underline-offset-4 font-semibold text-lg text-secondary-black transition-all ease-in duration-500"
+								? "underline capitalize decoration-customGreen underline-offset-4 font-light text-lg text-customGreen"
+								: " capitalize decoration-customGreen underline-offset-4 font-light text-lg text-secondary-white transition-all ease-in duration-500"
 						}`}
 						onClick={() => handleCategoryChange(category)}>
 						{category}

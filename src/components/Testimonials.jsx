@@ -83,38 +83,38 @@ const feedback = [
 const Testimonials = () => {
 	return (
 		<section
-			id="reviews"
-			className="pt-6 md:pt-12 pb-10 md:pb-20  mx-auto bg-customLight relative">
-			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-primary-black mb-0 pb-4">
+			id="testimonials"
+			className="pt-6 md:pt-12 pb-10 md:pb-20 mt-10 md:mt-20 mx-auto relative">
+			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-customGreen mb-0 pb-4">
 				Testimonials
 			</h3>
-			<hr className="w-12 h-0.5 mx-auto mt-2.5 md:mt-5 bg-primary-green" />
-			<p className="text-[#95a0ab] tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
+			<hr className="w-12 h-0.5 mx-auto mt-5 bg-secondary-white" />
+			<p className="text-secondary-white tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
 				Every Review, a Testimonial of Connection: Join Our Community in
 				Celebrating the <br /> Positive Ripples of Our Forest Engagement
 			</p>
 			<div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
 				<div className="max-w-xl text-center">
-					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary-white">
 						Don't just take our word for it...{""}
 						<br className="hidden sm:block lg:hidden" />
 						Read reviews from our customers
 					</h2>
 
-					<p className="mt-4 text-secondary-black">
+					<p className="mt-4 text-secondary-white">
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas
 						veritatis illo placeat harum porro optio fugit a culpa sunt id!
 					</p>
 
 					<div className="hidden lg:mt-8 lg:flex lg:gap-4">
-						<button className="prev-button rounded-full border border-secondary-green p-3 text-primary-green hover:bg-primary-green hover:text-white">
+						<button className="prev-button rounded-full border border-customGreen p-3 text-customGreen hover:bg-customGreen hover:text-white">
 							<span className="sr-only">Previous Slide</span>
 							<i>
 								<BsChevronLeft />
 							</i>
 						</button>
 
-						<button className="next-button rounded-full border border-secondary-green p-3 text-primary-green hover:bg-primary-green hover:text-white">
+						<button className="next-button rounded-full border border-customGreen p-3 text-customGreen hover:bg-customGreen hover:text-white">
 							<span className="sr-only">Next Slide</span>
 							<i>
 								<BsChevronRight />
@@ -171,16 +171,18 @@ export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
 	<div className="swiper-slide">
-		<blockquote className="flex flex-col justify-between bg-white">
+		<blockquote className="flex flex-col justify-between bg-tertiary-black">
 			<img src={img} alt={name} className="h-16 w-16 object-cover" />
 
 			<div className="mt-4 p-12">
-				<p className="text-2xl font-bold text-primary-green sm:text-3xl">
+				<p className="text-2xl font-bold text-secondary-white sm:text-3xl">
 					{title}
 				</p>
 
-				<p className="mt-4 leading-relaxed text-secondary-black">{content}</p>
-				<footer className="mt-8 text-sm text-secondary-black">
+				<p className="mt-4 leading-relaxed tracking-wide text-secondary-white">
+					{content}
+				</p>
+				<footer className="mt-8 text-sm text-customGreen tracking-wider">
 					&mdash; {name}
 				</footer>
 			</div>
