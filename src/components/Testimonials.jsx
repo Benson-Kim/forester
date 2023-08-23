@@ -144,7 +144,7 @@ const Testimonials = () => {
 								breakpoints={{
 									640: {
 										centeredSlides: true,
-										slidesPerView: 1.25,
+										slidesPerView: 1,
 									},
 									1024: {
 										centeredSlides: false,
@@ -152,9 +152,9 @@ const Testimonials = () => {
 									},
 								}}
 								modules={[Autoplay, Pagination, Navigation]}
-								className="">
-								{feedback.map((card) => (
-									<SwiperSlide>
+								className="flex mx-6">
+								{feedback.map((card, idx) => (
+									<SwiperSlide className="mr-[2%]">
 										<FeedbackCard key={card.id} {...card} />
 									</SwiperSlide>
 								))}
@@ -172,7 +172,9 @@ export default Testimonials;
 const FeedbackCard = ({ content, name, title, img }) => (
 	<div className="swiper-slide">
 		<blockquote className="flex flex-col justify-between bg-tertiary-black">
-			<img src={img} alt={name} className="h-16 w-16 object-cover" />
+			<div className="flex-[1.3345]">
+				<img src={img} alt={name} className="align-middle h-auto w-full" />
+			</div>
 
 			<div className="mt-4 p-12">
 				<p className="text-2xl font-bold text-secondary-white sm:text-3xl">

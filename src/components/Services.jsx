@@ -46,7 +46,7 @@ const Services = () => {
 				Enriching the Natural World Through <br /> Our Dedicated Forest
 				Management Services
 			</p>
-			<ul class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-6 m-10 md:m-28">
+			<ul className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-6 m-10 md:m-28">
 				{servicesContent.map((service) => (
 					<li
 						key={service.id}

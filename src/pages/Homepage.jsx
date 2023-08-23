@@ -1,20 +1,24 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 
-import GalleryPage from "../components/GalleryPage";
-import Contact from "./Contact";
-import Testimonials from "../components/Testimonials";
-import Services from "../components/Services";
-import Nav from "../components/Nav";
-import Home from "../components/Home";
-import Team from "../components/Team";
-import Blogs from "../components/Blog";
-import Quotes from "../components/Quotes";
 import {
 	PiFlowerDuotone,
 	PiTreePalmDuotone,
 	PiTrophyDuotone,
 	PiUserFocusDuotone,
 } from "react-icons/pi";
+import { Route, Routes } from "react-router-dom";
+
+const BlogPost = lazy(() => import("./BlogPost"));
+const GalleryPage = lazy(() => import("../components/GalleryPage"));
+const Contact = lazy(() => import("./Contact"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
+const Services = lazy(() => import("../components/Services"));
+const Nav = lazy(() => import("../components/Nav"));
+const Home = lazy(() => import("../components/Home"));
+const Team = lazy(() => import("../components/Team"));
+const Blogs = lazy(() => import("../components/Blog"));
+const Quotes = lazy(() => import("../components/Quotes"));
+const NoMatch = lazy(() => import("../components/NoMatch"));
 
 export const statsdata = [
 	{
@@ -40,7 +44,7 @@ export const statsdata = [
 
 const Homepage = () => {
 	return (
-		<div>
+		<Suspense fallback={<div className="container">Loading...</div>}>
 			<Nav />
 			<Home />
 			<Services />
@@ -51,7 +55,11 @@ const Homepage = () => {
 			<Blogs />
 			<Quotes />
 			<Contact />
-		</div>
+			<Routes>
+				<Route path="*" element={<NoMatch />} />
+				<Route path="/blog/:slug" element={<BlogPost />} />
+			</Routes>
+		</Suspense>
 	);
 };
 
