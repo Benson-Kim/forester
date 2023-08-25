@@ -13,14 +13,13 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
 	return (
-		<section id="contact" className="py-10 relative">
+		<section id="contacts" className="pt-6 md:pt-12 bg-tertiary-black ">
 			<div className="max-w-screen-tablet  laptop:max-w-[960px] desktop:max-w-[1140px] w-full px-4 mx-auto block">
 				<div className="py-10 flex flex-wrap -mx-4">
 					<div className="tablet:max-w-[50%] flex-1 w-2/3 px-4 block">
 						<h4 className="text-primary-white text-2xl leading-6 font-medium mb-4 mt-0 block">
 							Leave your message
 						</h4>
-						{/* form starts here */}
 
 						<div className="">
 							<form
@@ -112,7 +111,7 @@ const Contact = () => {
 								</div>
 							</div>
 						</div>
-						<ul className="flex w-full mb-5 justify-between items-center">
+						<ul className="flex w-full justify-between items-center">
 							<li className="flex items-center gap-2 text-xl justify-center p-2 transition duration-500 ease-in-out bg-secondary-white bg-opacity-90 text-primary-black rounded-md cursor-pointer hover:translate-x-1">
 								<i>
 									<RiFacebookFill className=" " />
@@ -143,7 +142,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
-			<hr className="block w-full h-[1px] border border-secodary-green border-dashed" />
+			<hr className="hidden md:block w-full h-[1px] border border-secodary-green border-dashed" />
 		</section>
 	);
 };

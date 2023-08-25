@@ -154,7 +154,7 @@ const Testimonials = () => {
 								modules={[Autoplay, Pagination, Navigation]}
 								className="flex mx-6">
 								{feedback.map((card, idx) => (
-									<SwiperSlide className="mr-[2%]">
+									<SwiperSlide key={idx} className="mr-[2%]">
 										<FeedbackCard key={card.id} {...card} />
 									</SwiperSlide>
 								))}

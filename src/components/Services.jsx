@@ -34,42 +34,46 @@ const servicesContent = [
 
 const Services = () => {
 	return (
-		<section
-			id="services"
-			className="pt-6 md:pt-12 pb-10 md:pb-20 mt-10 md:mt-20 mx-auto relative">
-			<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-customGreen mb-0 pb-4">
-				Services
-			</h3>
-			<hr className="w-12 h-0.5 mx-auto mt-5 bg-secondary-white" />
-			<p className="text-secondary-white tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
-				From Reforestation Initiatives to Holistic Habitat Restoration:
-				Enriching the Natural World Through <br /> Our Dedicated Forest
-				Management Services
-			</p>
-			<ul className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 justify-items-center gap-6 m-10 md:m-28">
-				{servicesContent.map((service) => (
-					<li
-						key={service.id}
-						className="w-full mx-4 lg:mx-8 2xl:mx-12 shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
-						<img
-							src={service.image}
-							alt={service.title}
-							className="h-44 w-full object-fill"
-						/>
-						<div className="px-4 py-2 text-center">
-							<h4 className="my-2 text-lg font-semibold text-secondary-white">
-								{service.title}
-							</h4>
-							<p className="text-center mt-1 5 py-1 5 text-sm mb-4 leading-6 tracking-wide text-secondary-white">
-								{service.description}
-							</p>
-						</div>
-						{/* <button className="inline-flex items-center bg-secondary-white border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
+		<section id="services" className="pt-6 md:pt-12  mb-10 md:mb-20 ">
+			<div className="text-center relative w-[95.75%] md:w-[83.5%] mx-auto px-4 ">
+				<h3 className="flex items-center justify-center uppercase text-3xl leading-4 tracking-[2px] font-medium text-customGreen mb-0 pb-4">
+					Services
+				</h3>
+				<hr className="w-12 h-0.5 mx-auto mt-5 bg-secondary-white" />
+				<p className="text-secondary-white tracking-wide text-center pt-6 leading-6 text-sm mb-8 ">
+					From Reforestation Initiatives to Holistic Habitat Restoration:
+					Enriching the Natural World Through <br /> Our Dedicated Forest
+					Management Services
+				</p>
+				<ul className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 justify-items-center -mx-3.5 md:gap-7">
+					{servicesContent.map((service) => (
+						<li
+							key={service.id}
+							className="w-full mx-4 mb-7 lg:mx-8 2xl:mx-12 shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
+							<div className="h-44 desktop:h-52 overflow-hidden relative ">
+								<img
+									src={service.image}
+									alt={service.title}
+									className="h-full w-full object-cover object-center"
+								/>
+							</div>
+							<div className="px-3.5 py-5 ">
+								<div className="break-words overflow-hidden">
+									<h4 className="text-lg leading-7 mb-2.5 font-normal font-rubik text-secondary-white">
+										{service.title}
+									</h4>
+									<p className="text-sm clear-both font-poppins font-light leading-6 tracking-wide text-secondary-white">
+										{service.description}
+									</p>
+								</div>
+							</div>
+							{/* <button className="inline-flex items-center bg-secondary-white border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
 							Read More
 						</button> */}
-					</li>
-				))}
-			</ul>
+						</li>
+					))}
+				</ul>
+			</div>
 		</section>
 	);
 };

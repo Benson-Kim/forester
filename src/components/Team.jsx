@@ -13,6 +13,18 @@ const Team = () => {
 				Meet the Guardians of the Wilderness: Our Passionate and Expert Team
 				<br /> Dedicated to Preserving Nature's Majesty
 			</p>
+			<div className="grid grid-cols-1 md:grid-cols-2 mx-4 md:mx-16 mt-36">
+				<div className="bg-tertiary-black h-1/2 md:h-auto mx-5 md:mx-20 ">
+					<img
+						src="./assets/images/team1.png"
+						alt=""
+						className="h-1/2 md:h-full"
+					/>
+				</div>
+				<div className="">
+					<img src="./assets/images/team1.png" alt="" />
+				</div>
+			</div>
 		</section>
 	);
 };

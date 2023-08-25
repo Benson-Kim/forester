@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+// import function to register Swiper custom elements
+import { register } from "swiper/element/bundle";
+// register Swiper custom elements
+register();
 
 const environquotes = [
 	{
@@ -62,6 +57,7 @@ const environquotes = [
 const Quotes = () => {
 	const [apiquotes, setApiQuotes] = useState([]);
 	const [error, setError] = useState("");
+	const swiperElRef = useRef(null);
 
 	const category = "environmental";
 
@@ -83,6 +79,15 @@ const Quotes = () => {
 			.catch((error) => {
 				setError(error);
 			});
+
+		swiperElRef.current.addEventListener("progress", (e) => {
+			const [swiper, progress] = e.detail;
+			console.log(progress);
+		});
+
+		swiperElRef.current.addEventListener("slidechange", (e) => {
+			console.log("slide changed");
+		});
 	}, []);
 
 	return (
@@ -112,10 +117,12 @@ const Quotes = () => {
 export default Quotes;
 
 export const QuotesSlider = ({ sourcequotes }) => {
+	const swiperElRef = useRef(null);
+
 	return (
 		<blockquote className="bg-inherit text-customGreen text-3xl font-semibold mb-6">
 			{/* <p className="text-white text-3xl font-semibold mb-6">New Releases</p> */}
-			<Swiper
+			{/* <Swiper
 				spaceBetween={50}
 				slidesPerView={1}
 				loop={true}
@@ -131,13 +138,6 @@ export const QuotesSlider = ({ sourcequotes }) => {
 								return (
 									<SwiperSlide key={index}>
 										<div className="bg-inherit">
-											{/* <div className="h-[158px] w-[158px] object-cover">
-												<img
-													className="h-[158px] rounded-md"
-													src={album.images[1].url}
-													alt=""
-												/>
-											</div> */}
 											<p className="">{quote.quote}</p>
 											<p className="line-clamp-1 text-gray-300 pt-4">
 												{quote.author}
@@ -148,7 +148,17 @@ export const QuotesSlider = ({ sourcequotes }) => {
 						  })
 						: null}
 				</>
-			</Swiper>
+			</Swiper> */}
+			<swiper-container
+				ref={swiperElRef}
+				slides-per-view="3"
+				navigation="true"
+				pagination="true">
+				<swiper-slide>Slide 1</swiper-slide>
+				<swiper-slide>Slide 2</swiper-slide>
+				<swiper-slide>Slide 3</swiper-slide>
+				...
+			</swiper-container>
 		</blockquote>
 	);
 };

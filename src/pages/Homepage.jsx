@@ -7,6 +7,8 @@ import {
 	PiUserFocusDuotone,
 } from "react-icons/pi";
 import { Route, Routes } from "react-router-dom";
+import QuotesSlider from "../components/QuotesSlider";
+import BlogListing from "../components/Blogs";
 
 const BlogPost = lazy(() => import("./BlogPost"));
 const GalleryPage = lazy(() => import("../components/GalleryPage"));
@@ -16,8 +18,6 @@ const Services = lazy(() => import("../components/Services"));
 const Nav = lazy(() => import("../components/Nav"));
 const Home = lazy(() => import("../components/Home"));
 const Team = lazy(() => import("../components/Team"));
-const Blogs = lazy(() => import("../components/Blog"));
-const Quotes = lazy(() => import("../components/Quotes"));
 const NoMatch = lazy(() => import("../components/NoMatch"));
 
 export const statsdata = [
@@ -50,10 +50,10 @@ const Homepage = () => {
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
-			<Testimonials />
+			{/* <Testimonials /> */}
 			<Team />
-			<Blogs />
-			<Quotes />
+			<BlogListing />
+			{/* <QuotesSlider /> */}
 			<Contact />
 			<Routes>
 				<Route path="*" element={<NoMatch />} />
