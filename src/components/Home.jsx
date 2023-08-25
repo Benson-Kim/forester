@@ -31,13 +31,13 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="absolute bottom-0 left-0 right-0">
+			{/* <div className="absolute bottom-0 left-0 right-0">
 				<img
 					src="/assets/images/waves.png"
 					alt=""
 					className="max-w-full align-middle"
 				/>
-			</div>
+			</div> */}
 		</section>
 	);
 };

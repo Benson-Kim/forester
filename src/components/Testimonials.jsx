@@ -123,7 +123,7 @@ const Testimonials = () => {
 					</div>
 				</div>
 				<div className="-mx-6 lg:col-span-2 lg:mx-0">
-					<div className="swiper-container !overflow-hidden">
+					<div className="swiper-container">
 						<div className="swiper-wrapper">
 							<Swiper
 								spaceBetween={32}
@@ -133,9 +133,6 @@ const Testimonials = () => {
 								autoplay={{
 									delay: 3000,
 									disableOnInteraction: false,
-								}}
-								pagination={{
-									clickable: true,
 								}}
 								navigation={{
 									nextEl: ".next-button",
@@ -151,10 +148,10 @@ const Testimonials = () => {
 										slidesPerView: 1.5,
 									},
 								}}
-								modules={[Autoplay, Pagination, Navigation]}
-								className="flex mx-6">
+								modules={[Autoplay, Navigation]}
+								className="grid grid-cols-1 md:grid-cols-2">
 								{feedback.map((card, idx) => (
-									<SwiperSlide key={idx} className="mr-[2%]">
+									<SwiperSlide key={idx} className="">
 										<FeedbackCard key={card.id} {...card} />
 									</SwiperSlide>
 								))}
@@ -171,11 +168,14 @@ export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
 	<div className="swiper-slide">
-		<blockquote className="flex flex-col justify-between bg-tertiary-black">
-			<div className="flex-[1.3345]">
-				<img src={img} alt={name} className="align-middle h-auto w-full" />
+		<div className="w-full mx-4 mb-7 lg:mx-8 2xl:mx-12 shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
+			<div className="h-52 desktop:h-64 overflow-hidden relative ">
+				<img
+					src={img}
+					alt={title}
+					className="h-full w-full object-cover object-center"
+				/>
 			</div>
-
 			<div className="mt-4 p-12">
 				<p className="text-2xl font-bold text-secondary-white sm:text-3xl">
 					{title}
@@ -188,6 +188,9 @@ const FeedbackCard = ({ content, name, title, img }) => (
 					&mdash; {name}
 				</footer>
 			</div>
-		</blockquote>
+			{/* <button className="inline-flex items-center bg-secondary-white border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
+							Read More
+						</button> */}
+		</div>
 	</div>
 );

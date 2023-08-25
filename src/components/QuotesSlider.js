@@ -136,7 +136,7 @@ export default QuotesSlider;
 
 const QuotesCard = ({ author, text }) => (
 	<div className="swiper-slide">
-		<blockquote className="flex flex-col justify-between bg-tertiary-black">
+		<blockquote className="flex flex-col justify-between bg-tertiary-black min-h-[100px]">
 			<div className="mt-4 p-12">
 				<p className="mt-4 leading-relaxed tracking-wide text-secondary-white first-letter:">
 					{text}

@@ -50,10 +50,10 @@ const Homepage = () => {
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
-			{/* <Testimonials /> */}
+			<Testimonials />
 			<Team />
 			<BlogListing />
-			{/* <QuotesSlider /> */}
+			<QuotesSlider />
 			<Contact />
 			<Routes>
 				<Route path="*" element={<NoMatch />} />
