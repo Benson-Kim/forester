@@ -6,19 +6,16 @@ import {
 	PiTrophyDuotone,
 	PiUserFocusDuotone,
 } from "react-icons/pi";
-import { Route, Routes } from "react-router-dom";
-import QuotesSlider from "../components/QuotesSlider";
-import BlogListing from "../components/Blogs";
 
-const BlogPost = lazy(() => import("./BlogPost"));
+import QuotesSlider from "../components/QuotesSlider";
+import Blogs from "../components/Blogs";
+
 const GalleryPage = lazy(() => import("../components/GalleryPage"));
 const Contact = lazy(() => import("./Contact"));
 const Testimonials = lazy(() => import("../components/Testimonials"));
 const Services = lazy(() => import("../components/Services"));
-const Nav = lazy(() => import("../components/Nav"));
 const Home = lazy(() => import("../components/Home"));
 const Team = lazy(() => import("../components/Team"));
-const NoMatch = lazy(() => import("../components/NoMatch"));
 
 export const statsdata = [
 	{
@@ -42,23 +39,18 @@ export const statsdata = [
 	{ id: 4, icon: PiTrophyDuotone, emphasis: "02", content: "awards earned" },
 ];
 
-const Homepage = () => {
+const Homepage = ({ blogs }) => {
 	return (
 		<Suspense fallback={<div className="container">Loading...</div>}>
-			<Nav />
 			<Home />
 			<Services />
 			<GalleryPage />
 			<Awards statsdata={statsdata} />
 			<Testimonials />
 			<Team />
-			<BlogListing />
+			<Blogs blogs={blogs} />
 			<QuotesSlider />
 			<Contact />
-			<Routes>
-				<Route path="*" element={<NoMatch />} />
-				<Route path="/blog/:slug" element={<BlogPost />} />
-			</Routes>
 		</Suspense>
 	);
 };

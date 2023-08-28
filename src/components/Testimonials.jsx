@@ -122,7 +122,7 @@ const Testimonials = () => {
 						</button>
 					</div>
 				</div>
-				<div className="-mx-6 lg:col-span-2 lg:mx-0">
+				<div className="-mx-40 lg:col-span-2 lg:mx-0">
 					<div className="swiper-container">
 						<div className="swiper-wrapper">
 							<Swiper
@@ -149,9 +149,11 @@ const Testimonials = () => {
 									},
 								}}
 								modules={[Autoplay, Navigation]}
-								className="grid grid-cols-1 md:grid-cols-2">
+								className="">
 								{feedback.map((card, idx) => (
-									<SwiperSlide key={idx} className="">
+									<SwiperSlide
+										key={idx}
+										className="grid grid-cols-1 justify-items-center">
 										<FeedbackCard key={card.id} {...card} />
 									</SwiperSlide>
 								))}
@@ -167,8 +169,8 @@ const Testimonials = () => {
 export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
-	<div className="swiper-slide">
-		<div className="w-full mx-4 mb-7 lg:mx-8 2xl:mx-12 shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
+	<div className="swiper-slide h-max">
+		<div className="w-full shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
 			<div className="h-52 desktop:h-64 overflow-hidden relative ">
 				<img
 					src={img}
@@ -188,9 +190,6 @@ const FeedbackCard = ({ content, name, title, img }) => (
 					&mdash; {name}
 				</footer>
 			</div>
-			{/* <button className="inline-flex items-center bg-secondary-white border-0 py-1.5 px-5 text-secondary-black rounded-full hover:bg-secondary-black hover:text-customLight transition-all ease-in duration-300">
-							Read More
-						</button> */}
 		</div>
 	</div>
 );

@@ -69,7 +69,7 @@ const GalleryPage = () => {
 										alt={`${image.category}`}
 										className="h-full w-full object-cover object-center"
 									/>
-									<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-secondary-black opacity-0 group-hover:h-full group-hover:opacity-100 group-hover:text-secondary-white duration-500">
+									<div className="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-secondary-black opacity-0 group-hover:h-full group-hover:opacity-100 group-hover:text-secondary-white duration-500">
 										This Is The Overlay
 									</div>
 								</div>
