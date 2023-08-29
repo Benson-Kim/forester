@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import client from "../client";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 const BlogDetails = () => {
 	const [blogPost, setBlogPost] = useState([]);

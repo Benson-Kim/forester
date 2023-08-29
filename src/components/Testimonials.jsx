@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-cube";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, EffectCube, Navigation } from "swiper/modules";
 
 const feedback = [
 	{
@@ -93,8 +93,8 @@ const Testimonials = () => {
 				Every Review, a Testimonial of Connection: Join Our Community in
 				Celebrating the <br /> Positive Ripples of Our Forest Engagement
 			</p>
-			<div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
-				<div className="max-w-xl text-center">
+			<div className="grid grid-cols-1 gap-y-8 lg:grid-cols-4 lg:items-center lg:gap-x-16">
+				<div className="max-w-xl text-center hidden lg:block lg:col-span-2">
 					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-secondary-white">
 						Don't just take our word for it...{""}
 						<br className="hidden sm:block lg:hidden" />
@@ -122,7 +122,7 @@ const Testimonials = () => {
 						</button>
 					</div>
 				</div>
-				<div className="-mx-40 lg:col-span-2 lg:mx-0">
+				<div className="lg:col-span-2 lg:mx-0">
 					<div className="swiper-container">
 						<div className="swiper-wrapper">
 							<Swiper
@@ -131,8 +131,15 @@ const Testimonials = () => {
 								centeredSlides={true}
 								loop={true}
 								autoplay={{
-									delay: 3000,
+									delay: 5000,
 									disableOnInteraction: false,
+								}}
+								effect={"cube"}
+								cubeEffect={{
+									shadow: true,
+									slideShadows: true,
+									shadowOffset: 20,
+									shadowScale: 0.94,
 								}}
 								navigation={{
 									nextEl: ".next-button",
@@ -148,7 +155,7 @@ const Testimonials = () => {
 										slidesPerView: 1.5,
 									},
 								}}
-								modules={[Autoplay, Navigation]}
+								modules={[Autoplay, EffectCube, Navigation]}
 								className="">
 								{feedback.map((card, idx) => (
 									<SwiperSlide
@@ -169,16 +176,16 @@ const Testimonials = () => {
 export default Testimonials;
 
 const FeedbackCard = ({ content, name, title, img }) => (
-	<div className="swiper-slide h-max">
+	<div className="swiper-slide overflow-auto contain">
 		<div className="w-full shadow-sm flex flex-col bg-tertiary-black hover:-translate-y-1.5 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition ease-in-out duration-500">
-			<div className="h-52 desktop:h-64 overflow-hidden relative ">
+			<div className="h-36 desktop:h-40 overflow-hidden relative ">
 				<img
 					src={img}
 					alt={title}
 					className="h-full w-full object-cover object-center"
 				/>
 			</div>
-			<div className="mt-4 p-12">
+			<div className="mt-4 px-12 py-6">
 				<p className="text-2xl font-bold text-secondary-white sm:text-3xl">
 					{title}
 				</p>

@@ -39,7 +39,7 @@ export const statsdata = [
 	{ id: 4, icon: PiTrophyDuotone, emphasis: "02", content: "awards earned" },
 ];
 
-const Homepage = ({ blogs }) => {
+const Homepage = () => {
 	return (
 		<Suspense fallback={<div className="container">Loading...</div>}>
 			<Home />
@@ -48,7 +48,7 @@ const Homepage = ({ blogs }) => {
 			<Awards statsdata={statsdata} />
 			<Testimonials />
 			<Team />
-			<Blogs blogs={blogs} />
+			<Blogs />
 			<QuotesSlider />
 			<Contact />
 		</Suspense>
